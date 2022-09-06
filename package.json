@@ -23,6 +23,7 @@
     "subfont": "^6.9.0"
   },
   "dependencies": {
+    "astro-icon": "^0.7.3",
     "astro-imagetools": "^0.6.10"
   }
 }

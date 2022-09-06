@@ -13,6 +13,7 @@ import StepsLeft from "~/components/widgets/StepsLeft.astro";
 import HighlightedPosts from "~/components/widgets/HighlightedPosts.astro";
 import Stats from "~/components/widgets/Stats.astro";
 import { Img } from "astro-imagetools/components";
+import { Icon } from 'astro-icon'
 
 const title = `${SITE.name} — Your website with Astro + Tailwind CSS`;
 const description =
@@ -22,22 +23,33 @@ const canonical = new URL("", Astro.site);
 
 <Layout meta={{ title, description, canonical }}>
   <main>
-    <Img src="https://picsum.photos/1024/768" alt="A random image" />
-    <Img
-      src="https://picsum.photos/1024/768"
-      alt="A random image"
-      sizes="(min-width: 1024px) 1024px, 100vw"
-    />
 
-    <!-- function type -->
-    <Img
-      src="https://picsum.photos/1024/768"
-      alt="A random image"
-      sizes={(breakpoints) => {
-        const maxWidth = breakpoints[breakpoints.length - 1];
-        return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-      }}
-    />
+    <div class="inline-flex items-baseline">
+      <!-- Automatically fetches and inlines Material Design Icon's "account" SVG -->
+      <Icon pack="mdi" name="account" class="max-w-xs"/>
+
+      <!-- Equivalent shorthand -->
+      <Icon name="mdi:account" class="max-w-xs"/>
+
+      <Img src="https://picsum.photos/1024/768" alt="A random image" />
+      <Img
+        src="https://picsum.photos/1024/768"
+        alt="A random image"
+        sizes="(min-width: 1024px) 1024px, 100vw"
+      />
+
+      <!-- function type -->
+      <Img
+        src="https://picsum.photos/1024/768"
+        alt="A random image"
+        sizes={(breakpoints) => {
+          const maxWidth = breakpoints[breakpoints.length - 1];
+          return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+        }}
+      />
+    </div>
+
+
     <Hero />
     <BasicFeatures />
     <StepsLeft />
