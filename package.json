@@ -21,5 +21,8 @@
     "prettier-plugin-astro": "^0.5.0",
     "reading-time": "^1.5.0",
     "subfont": "^6.9.0"
+  },
+  "dependencies": {
+    "astro-imagetools": "^0.6.10"
   }
 }
